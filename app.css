@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,400i,600&display=swap');
+
+/* Variables */
+:root {
+  --small-breakpoint: 900px;
+
+  --gray-1: hsl(210, 20%, 10%);
+  --gray-3: hsl(210, 10%, 20%);
+  --gray-5: hsl(210, 10%, 35%);
+  --gray-7: hsl(210, 10%, 50%);
+  --gray-9: hsl(210, 10%, 65%);
+
+  /* Scale */
+  --xxs: 4px;
+  --xs: 8px;
+  --small: 12px;
+  --baseline: 16px;
+  --large: 24px;
+  --xl: 32px;
+  --xxl: 48px;
+  --xxxl: 64px;
+  --xxxxl: 96px;
+  --xxxxxl: 128px;
+  --xxxxxxl: 192px;
+  --xxxxxxxl: 256px;
+  --xxxxxxxxl: 384px;
+  --xxxxxxxxxl: 512px;
+
+  /* Type */
+  --font-xs: 12px;
+  --font-small: 14px;
+  --font-baseline: 16px;
+  --font-large: 18px;
+  --font-xl: 20px;
+  --font-xxl: 24px;
+  --font-xxxl: 30px;
+  --font-xxxxl: 36px;
+  --font-xxxxxl: 48px;
+  --font-xxxxxxl: 60px;
+  --font-xxxxxxxl: 72px;
+}
+
+/* Resets */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1 {
+  font-size: var(--font-xxxxxxxl);
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-bottom: var(--xxs);
+  text-rendering: optimizeLegibility;
+}
+h1 + p {
+  margin-left: 3px; /* Visual alignment */
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: var(--font-xxl);
+}
+h2 {
+  font-size: var(--font-xxxxl);
+  text-transform: uppercase;
+  font-family: 'Open Sans Condensed', sans-serif;
+  margin-top: var(--large);
+  margin-bottom: var(--baseline);
+}
+aside h2 {
+  font-size: var(--font-xxl);
+}
+h3 {
+  font-size: var(--font-xxl);
+  color: var(--gray-1);
+}
+li, p {
+  margin-bottom: var(--baseline);
+  color: var(--gray-5);
+  line-height: 1.5;
+  max-width: var(--xxxxxxxxxl);
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: var(--font-baseline);
+  color: var(--gray-1);
+}
+@media screen and (max-width: 900px){
+  body {
+    font-size: var(--font-small);
+  }
+  h1 {
+    font-size: var(--font-xxxxxl);
+  }
+  h1 + p {
+    font-size: var(--font-xl);
+    line-height: 1.1;
+  }
+  h2 {
+    font-size: var(--font-xxl);
+  }
+  aside h2 {
+    font-size: var(--font-xxl);
+  }
+  h3 {
+    font-size: var(--font-large);
+  }
+}
+
+/* Layout */
+body {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+.resume {
+  display: grid;
+  padding: var(--xxxxl) var(--xxxxxl);
+  grid-template-columns: var(--xxxxxxxxl) var(--xxxxxxxxl);
+  grid-template-rows: auto auto;
+  grid-row-gap: var(--small);
+  grid-column-gap: var(--xxxl);
+  position: relative;
+}
+header {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 2;
+}
+main {
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+}
+aside {
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;
+}
+aside > section {
+  margin-bottom: var(--xxxl);
+}
+@media screen and (max-width: 900px) {
+  .resume {
+    padding: var(--baseline) var(--baseline);
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+  }
+  header {
+    grid-column: 1 / span 1;
+  }
+  aside {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  aside > section {
+    margin-bottom: var(--baseline);
+  }
+  aside .contact {
+    order: 3;
+  }
+  aside .education {
+    order: 1;
+  }
+  aside .etc {
+    order: 2;
+  }
+}
+@media print {
+  body {
+    padding: var(--xxl);
+  }
+  .resume {
+    padding: 0;
+  }
+  .print {
+    display: none;
+  }
+}
+
+/* Work */
+.job {
+  margin-bottom: var(--large);
+}
+.job .position {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.job time {
+  font-style: italic;
+  color: var(--gray-9);
+}
+.job .employer {
+  margin-bottom: var(--xs);
+  color: var(--gray-3);
+}
+
+/* Contact */
+.contact dt, .contact dd {
+  display: inline-block;
+  margin-bottom: var(--xs);
+  color: var(--gray-5);
+}
+.contact dt {
+  width: var(--large);
+  position: relative;
+}
+.contact i {
+  font-size: inherit;
+  position: absolute;
+  top: -5px; /* Visual alignment */
+  color: var(--gray-7);
+}
+
+/* Education */
+.degree {
+  font-weight: 600;
+  font-size: var(--font-large);
+  color: var(--gray-5);
+  margin-bottom: 0;
+}
