@@ -41,6 +41,9 @@
 }
 
 /* Resets */
+* {
+  box-sizing: border-box;
+}
 a {
   text-decoration: none;
   color: inherit;
@@ -112,7 +115,6 @@ body {
 body {
   display: flex;
   justify-content: center;
-  width: 100vw;
 }
 .resume {
   display: grid;
