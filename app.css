@@ -224,3 +224,14 @@ aside > section {
   color: var(--gray-5);
   margin-bottom: 0;
 }
+
+/* Cover letter */
+
+.cover-letter {
+  padding-top: 24px;
+}
+
+.reasons {
+  list-style: square;
+  padding-left: 16px;
+}
