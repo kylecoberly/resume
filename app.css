@@ -170,8 +170,13 @@ aside > section {
   }
 }
 @media print {
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
   body {
-    padding: var(--xxl);
+    padding: 0;
+    zoom: 0.75;
   }
   .resume {
     padding: 0;
