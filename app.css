@@ -187,6 +187,9 @@ aside > section {
   .print {
     display: none;
   }
+  .job {
+    break-inside: avoid;
+  }
 }
 
 /* Work */
