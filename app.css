@@ -64,6 +64,9 @@ h1 + p {
   text-transform: uppercase;
   font-size: var(--font-xxl);
 }
+.subtitle {
+  white-space: nowrap;
+}
 h2 {
   font-size: var(--font-xxxxl);
   text-transform: uppercase;
