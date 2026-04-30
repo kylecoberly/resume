@@ -204,6 +204,7 @@ aside > section {
 .job time {
   font-style: italic;
   color: var(--gray-9);
+  white-space: nowrap;
 }
 .job .employer {
   margin-bottom: var(--xs);
